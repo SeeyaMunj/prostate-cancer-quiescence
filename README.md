@@ -43,4 +43,3 @@ This document lists the software and package versions used for all analyses in t
 
 ---
 
-**Note:** For full reproducibility, complete training and evaluation code, processed expression matrices, cell metadata (including FACS-derived G0/non-G0 labels), trained model weights, and executable notebooks are available at: `github.com/SeeyaMunj/prostate-cancer-quiescence`
