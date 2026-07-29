@@ -1,6 +1,9 @@
 Use the link below to access the datasets used:
 [https://drive.google.com/drive/u/0/folders/1G0PcZrgVe6RN5WR4F_w12w-4VRew8iwp](https://drive.google.com/drive/folders/1G0PcZrgVe6RN5WR4F_w12w-4VRew8iwp?usp=sharing)
 
+The external data validation dataset can be found at:
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE176031
+
 
 # Software and Package Versions
 
