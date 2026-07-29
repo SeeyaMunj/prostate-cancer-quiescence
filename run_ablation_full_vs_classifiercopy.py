@@ -16,7 +16,7 @@ from tensorflow.keras.layers import BatchNormalization, Dense, Input
 from tensorflow.keras.models import Model
 from tensorflow.keras.utils import to_categorical
 
-BASE_DIR = Path(r"C:\Users\seeya\Documents\Codex\2026-07-13\395894")
+BASE_DIR = Path(r"C:\Users\User\Documents")
 H5_DIR = BASE_DIR / "outputs" / "table1_intersection_h5_table1_samples"
 OUT_DIR = BASE_DIR / "outputs" / "comment4_ablation_full_vs_classifier_only_3epoch"
 
