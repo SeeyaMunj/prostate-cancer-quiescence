@@ -141,9 +141,7 @@ def write_summary(results, output_dir, title, split_line, sentence_prefix):
         f"Mean AUC: {auc_mean:.6f} +/- {auc_std:.6f}\n\n"
         "Per-run AUCs:\n"
         + "\n".join(f"run {int(r.repeat):02d}: {r.auc:.6f}" for r in results.itertuples())
-        + "\n\nManuscript sentence:\n"
-        f"{sentence_prefix} Across these runs, the model achieved a mean AUC of "
-        f"{auc_mean:.3f} +/- {auc_std:.3f} for {opt.serum_label}.\n"
+        + "\n"
     )
     with open(summary_txt, "w", encoding="utf-8") as f:
         f.write(summary)
@@ -191,7 +189,6 @@ def run_cv():
             opt.output_dir,
             f"Stratified k-fold cross-validation for {opt.serum_label}",
             f"Folds: {opt.folds}",
-            f"Rather than relying on a single random 70/30 split, we performed {opt.folds}-fold cross-validation for the {opt.serum_label} within-dataset analysis.",
         )
     else:
         print(f"Repeated 70/30 splits: {opt.repeats}")
@@ -209,11 +206,10 @@ def run_cv():
 
         results = pd.DataFrame(rows)
         write_summary(
-            results,
+           results,
             opt.output_dir,
             f"Repeated-split validation for {opt.serum_label}",
-            f"Repeats: {opt.repeats}; split: {int((1 - opt.test_fraction) * 100)}/{int(opt.test_fraction * 100)} train/test",
-            f"Rather than relying on a single random 70/30 split, we repeated the split {opt.repeats} times for the {opt.serum_label} within-dataset analysis.",
+            f"Repeats: {opt.repeats}; split: {int((1 - opt.test_fraction) * 100)}/{int(opt.test_fraction * 100)} train/test"
         )
 
 
