@@ -14,9 +14,9 @@ import sklearn.metrics as sk  # Ensure sklearn.metrics is imported
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--phase', default='test', choices=['train', 'test'], help='train or test')
-parser.add_argument('--h5_file', default=r'C:\Users\seeya\Documents\Codex\2026-07-13\395894\outputs\table1_intersection_h5_table1_samples\PC3_high_table1_intersection_genes_table1_samples.h5')
+parser.add_argument('--h5_file', default=r'C:\Users\User\Documents\PC3_high_table1_intersection_genes_table1_samples.h5')
 parser.add_argument('--gene_name_file', default='', help='optional gene-name CSV; if empty, gene_name is read from H5')
-parser.add_argument('--output_dir', default=r'C:\Users\seeya\Documents\Codex\2026-07-13\395894\outputs\mlc_ae_train_shap_corrected_run')
+parser.add_argument('--output_dir', default=r'C:\Users\User\Documents\mlc_ae_train_shap_corrected_run')
 parser.add_argument('--max_epoch', type=int, default=10, help='Epoch to run [default: 10]')
 parser.add_argument('--batch_size', type=int, default=256, help='batch size')
 parser.add_argument('--test_size', type=int, default=2712, help='number of held-out test cells')
