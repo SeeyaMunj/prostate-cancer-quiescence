@@ -1,9 +1,3 @@
-# ============================================================
-# 04_statistics.R
-# Purpose: correlations, high/low group comparison, per-patient
-#          robustness check, and a technical-covariate check.
-# ============================================================
-
 library(Seurat)
 library(dplyr)
 library(lme4)       # for the patient-random-effect check
@@ -33,10 +27,6 @@ md$g0_group <- case_when(
   TRUE ~ "mid"
 )
 
-# Ki-67+ defined at the single-cell level as "any detected transcript."
-# MKI67 dropout is severe in scRNA-seq, so treat this binary comparison as
-# SECONDARY, supporting evidence -- the continuous correlation above is
-# the primary evidence and should be led with in the write-up.
 md$ki67_pos <- md$MKI67_expr > 0
 
 sub <- md[md$g0_group != "mid", ]
@@ -47,12 +37,6 @@ pct_pos <- prop.table(tab, margin = 1)[, "TRUE"] * 100
 cat(sprintf("%%MKI67+ in signature-high: %.1f%% vs signature-low: %.1f%%\n",
             pct_pos["high"], pct_pos["low"]))
 
-# ---- 3. Per-patient robustness check ----
-# Addresses the same pseudo-replication concern Reviewer 1 raised in
-# Comment 1 -- and the source paper (Song et al. 2022) itself reports that
-# tumor cells cluster in a patient-specific manner for ERG+ cases, which is
-# exactly the kind of structure that can inflate a pooled cell-level
-# correlation. Report this alongside the pooled result, not instead of it.
 
 # 3a. Pseudobulk: one point per patient
 patient_avg <- md %>%
@@ -62,16 +46,12 @@ patient_avg <- md %>%
 print(patient_avg)
 print(cor.test(patient_avg$G0, patient_avg$cycling, method = "spearman"))
 
-# 3b. Mixed model: does G0 score predict cycling score after accounting for
-#     patient as a random effect? More rigorous than the pseudobulk check
-#     alone -- report both.
+
 mod <- lmer(cycling_score ~ G0_score + (1 | patient_id), data = md)
 print(summary(mod))
 
 # ---- 4. Technical-covariate check ----
-# Pre-empts Reviewer 1's Comment 4, which is currently blank in the
-# response document: does the G0 score just track library size / total
-# ribosomal reads, given the signature is majority ribosomal-protein genes?
+
 cor_nCount <- cor.test(md$G0_score, md$nCount_RNA,   method = "spearman")
 cor_nFeat  <- cor.test(md$G0_score, md$nFeature_RNA, method = "spearman")
 cor_ribo   <- cor.test(md$G0_score, md$percent.ribo, method = "spearman")
@@ -79,14 +59,7 @@ cor_ribo   <- cor.test(md$G0_score, md$percent.ribo, method = "spearman")
 cat(sprintf("G0 score vs nCount_RNA:   rho = %.3f, p = %.3g\n", cor_nCount$estimate, cor_nCount$p.value))
 cat(sprintf("G0 score vs nFeature_RNA: rho = %.3f, p = %.3g\n", cor_nFeat$estimate,  cor_nFeat$p.value))
 cat(sprintf("G0 score vs %%ribo:        rho = %.3f, p = %.3g\n", cor_ribo$estimate,   cor_ribo$p.value))
-# If these correlations are as strong as (or stronger than) the G0-vs-
-# cycling correlation in section 1, the signature may be tracking a
-# technical covariate rather than quiescence specifically. Worth reporting
-# either way; if it looks confounded, a useful sensitivity check is to
-# re-run scoring with the RPL/RPS genes dropped from g0_genes in script 03
-# and see whether the cycling/MKI67 correlation survives on the non-
-# ribosomal genes alone (ARF5, BIRC5, BUB3, HIST1H4C, MIF, NDUFA13, NME2,
-# RRM2, SPINT2, SRSF11, TUBA1B, TUBB, TXN, UBE2C, UQCRQ, WDR34).
+
 
 saveRDS(list(results = results, patient_avg = patient_avg, tab = tab,
              mixed_model = mod,
