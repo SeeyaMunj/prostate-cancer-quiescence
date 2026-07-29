@@ -1,9 +1,4 @@
-# ============================================================
-# 05_visualize.R
-# Purpose: build the supplementary figure -- UMAP of the tumor-
-#          epithelial compartment colored by G0 score and by
-#          proliferation metrics.
-# ============================================================
+
 
 library(Seurat)
 library(patchwork)
@@ -12,8 +7,6 @@ library(dplyr)
 
 tumor_epi <- readRDS("gse176031_tumor_epithelial_scored.rds")
 
-# Recompute the high/low split locally so this script doesn't depend on
-# script 04 having written it back onto the Seurat object.
 q <- quantile(tumor_epi$G0_score, probs = c(0.25, 0.75))
 tumor_epi$g0_group <- case_when(
   tumor_epi$G0_score >= q[2] ~ "high",
