@@ -1,0 +1,11 @@
+# R packages used by the R steps (R 4.5.2)
+# install with: Rscript install_r_packages.R
+Seurat        5.5.1
+SeuratObject  5.5.x
+dplyr         any
+ggplot2       any
+patchwork     any
+lme4          any
+lmerTest      any
+msigdbr       any     # Hallmark gene sets for the E2F/MYC module
+babelgene     22.9    # HCOP human-mouse orthologs (cross-species analysis only)
