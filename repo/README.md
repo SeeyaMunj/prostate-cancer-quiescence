@@ -16,11 +16,9 @@ code that produces it.
 ├── requirements.txt              pip alternative
 ├── r_packages.txt                R package list (R 4.5.2)
 ├── install_r_packages.R          installs the R packages
-├── scripts/                      analysis code
 ├── notebooks/                    executable notebooks, one per stage (01-06)
 ├── weights/                      trained MLC-AE weights, one per dataset + input gene order please find them in https://drive.google.com/drive/u/0/folders/1KoBfRSsgUmdHLVLkFBeYeXXx2HECFx_o
 ├── example_data/                 small subsampled dataset for a test run
-├── docs/figure_table_map.csv     every figure and table -> the script that makes it
 └── results/                      created when you run the pipeline
 ```
 
