@@ -1,0 +1,37 @@
+item,content,produced_by,source_type
+Table 1,Cells and genes per dataset,create_intersection_h5.py,code
+Figure 1,Study framework,Schematic,schematic
+Figure 2,MLC-AE architecture,Schematic,schematic
+Figure 3,Expression-space UMAPs of the six datasets,iScanGuide (Advaita Bioinformatics),external tool
+Figure 4,Marker-gene feature plots (PC3 and C4-2B),iScanGuide (Advaita Bioinformatics),external tool
+Figure 5a-b,SHAP gene rankings (PC3),mlc-ae_.py --phase test,code
+Figure 5c-f,Evaluation-classifier ROC curves (PC3),TO CONFIRM,code
+Figure 6,Training on high serum and testing on low serum,TO CONFIRM,code
+Figure 7,Training on human cell lines and testing on Myc-CaP,TO CONFIRM,code
+Figure 8a-b,SHAP versus DE versus random gene sets,TO CONFIRM,code
+Figure 8c-d,Impacted pathways (PC3),iPathwayGuide (Advaita Bioinformatics),external tool
+Figure 8e,Intersection of the PC3 differential-expression contrasts,iPathwayGuide (Advaita Bioinformatics),external tool
+Figure 8f,p-S6 immunofluorescence,Laboratory experiment; Fiji and GraphPad Prism,laboratory
+Supplementary Figure S1,Marker-gene feature plots (Myc-CaP),iScanGuide (Advaita Bioinformatics),external tool
+Supplementary Figures S2a-b and S3a-b,SHAP gene rankings (Myc-CaP and C4-2B),mlc-ae_.py --phase test,code
+Supplementary Figures S2c-f and S3c-f,Evaluation-classifier ROC curves (Myc-CaP and C4-2B),TO CONFIRM,code
+Supplementary Figure S4,Impacted pathways (C4-2B and Myc-CaP),iPathwayGuide (Advaita Bioinformatics),external tool
+Supplementary Figures S5-S7,GSE176031 quality control clustering and marker genes,external_dataset/01_load_and_merge.R; external_dataset/02_qc_and_cluster.R,code
+Supplementary Figure S8,Weighted G0 score in patient tumour epithelium,Patient-cohort scoring script,code
+Supplementary Figure S9,Latent-space UMAPs,run_latent_space_umap_all_six.py,code
+Supplementary Figure S10,Quality control of G0 and non-G0 cells,TO CONFIRM,code
+Supplementary Figure S11,Rapamycin flow cytometry and OPP assay,Laboratory experiment,laboratory
+Supplementary Figure S12,Seurat cell-cycle scoring,TO CONFIRM,code
+Supplementary Figure S13,Cross-cell-line transfer ROC curves,TO CONFIRM,code
+Supplementary Table S1,Weighted G0 score versus proliferation measures (GSE176031),Patient-cohort scoring script,code
+Supplementary Table S2,SHAP gene stability across seeds and datasets,TO CONFIRM,code
+Supplementary Table S3,Gene-selection benchmark,TO CONFIRM,code
+Supplementary Table S4,Full model versus classifier-only network; permuted-label control,run_ablation_full_vs_classifier_only.py; run_permuted_label_ablation.py,code
+Supplementary Table S4b,Outer-fold evaluation of the complete pipeline,TO CONFIRM,code
+Supplementary Table S5,Computational workflow,This README (Section 4),documentation
+Supplementary Table S6,Model configuration and hyperparameters,mlc-ae_.py,documentation
+Supplementary Table S7,Software versions,environment.yml; r_packages.txt,documentation
+Supplementary Table S8,Ribosomal-gene ablation,TO CONFIRM,code
+Supplementary Table S9,Performance of the 26-gene G0 signature,TO CONFIRM,code
+Supplementary Table S10,Conventional classifiers on the MLC-AE top-10 genes,TO CONFIRM,code
+Trained model,Myc-CaP low serum MLC-AE weights,mlc-ae_.py --phase train,code

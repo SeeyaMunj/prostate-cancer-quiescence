@@ -10,7 +10,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import MaxAbsScaler
 from sklearn.exceptions import ConvergenceWarning
 
-BASE = r"C:\Users\User\Documents\ "
+import os
+BASE = os.environ.get("PCQ_BASE", ".")
 DATA_DIR = os.path.join(BASE, "outputs", "table1_intersection_h5_table1_samples")
 OUT_DIR = os.path.join(BASE, "outputs", "comment4_permuted_label_ablation_10697")
 os.makedirs(OUT_DIR, exist_ok=True)

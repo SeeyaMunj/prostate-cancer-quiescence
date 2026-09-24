@@ -1,0 +1,52 @@
+{
+  "datasets": [
+    {
+      "name": "PC3_high",
+      "feature_csv": "data/PC3_high_expression.csv",
+      "gene_csv": "data/PC3_high_genes.csv",
+      "label_csv": "data/labels/PC3_high_labels.csv",
+      "go_label": 0,
+      "ngo_label": 1
+    },
+    {
+      "name": "PC3_low",
+      "feature_csv": "data/PC3_low_expression.csv",
+      "gene_csv": "data/PC3_low_genes.csv",
+      "label_csv": "data/labels/PC3_low_labels.csv",
+      "go_label": 0,
+      "ngo_label": 1
+    },
+    {
+      "name": "C42B_high",
+      "feature_csv": "data/C42B_high_expression.csv",
+      "gene_csv": "data/C42B_high_genes.csv",
+      "label_csv": "data/labels/C42B_high_labels.csv",
+      "go_label": 0,
+      "ngo_label": 1
+    },
+    {
+      "name": "C42B_low",
+      "feature_csv": "data/C42B_low_expression.csv",
+      "gene_csv": "data/C42B_low_genes.csv",
+      "label_csv": "data/labels/C42B_low_labels.csv",
+      "go_label": 0,
+      "ngo_label": 1
+    },
+    {
+      "name": "MycCaP_high",
+      "feature_csv": "data/MycCaP_high_expression.csv",
+      "gene_csv": "data/MycCaP_high_genes.csv",
+      "label_csv": "data/labels/MycCaP_high_labels.csv",
+      "go_label": 0,
+      "ngo_label": 1
+    },
+    {
+      "name": "MycCaP_low",
+      "feature_csv": "data/MycCaP_low_expression.csv",
+      "gene_csv": "data/MycCaP_low_genes.csv",
+      "label_csv": "data/labels/MycCaP_low_labels.csv",
+      "go_label": 0,
+      "ngo_label": 1
+    }
+  ]
+}

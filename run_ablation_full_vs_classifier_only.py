@@ -14,7 +14,8 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.utils import to_categorical
 
 
-BASE_DIR = Path(r"C:\Users\User\Documents\ ")
+import os
+BASE_DIR = Path(os.environ.get("PCQ_BASE", "."))
 H5_DIR = BASE_DIR / "outputs" / "table1_intersection_h5_table1_samples"
 OUT_DIR = BASE_DIR / "outputs" / "comment4_ablation_full_vs_classifier_only_3epoch"
 
