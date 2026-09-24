@@ -46,7 +46,7 @@ python -c "import tensorflow as tf, shap, sklearn; print(tf.__version__, shap.__
 
 | Data | Where | Used by |
 |---|---|---|
-| Cell-line scRNA-seq (PC3, C4-2B, Myc-CaP; high and low serum) and FACS G0/non-G0 labels | GEO accession [ADD ACCESSION]; processed files at https://drive.google.com/drive/folders/1G0PcZrgVe6RN5WR4F_w12w-4VRew8iwp | Steps 1–6 |
+| Cell-line scRNA-seq (PC3, C4-2B, Myc-CaP; high and low serum) and FACS G0/non-G0 labels | GEO accession to be deposited before publication; processed files at https://drive.google.com/drive/folders/1G0PcZrgVe6RN5WR4F_w12w-4VRew8iwp | Steps 1–6 |
 | Intersected matrix, C4-2B high serum | `datasets_h5/` in this repository | Step 1 output example |
 | GSE176031 patient cohort | GEO GSE176031 | Step 7 |
 
@@ -160,4 +160,4 @@ TensorFlow versions change the gradient API. Use the pinned versions.
 
 ## 8. Citation
 
-If you use this code, please cite the manuscript and this repository release: [ADD DOI AFTER ARCHIVING].
+If you use this code, please cite the manuscript.
