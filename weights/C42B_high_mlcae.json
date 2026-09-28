@@ -1,0 +1,17 @@
+{
+ "dataset": "C42B_high",
+ "n_genes": 9758,
+ "n_cells": 12997,
+ "n_G0": 6529,
+ "train_cells": 9097,
+ "test_cells": 3900,
+ "test_auc": 0.9982,
+ "epochs": 10,
+ "batch_size": 256,
+ "seed": 4,
+ "split": "70/30 stratified",
+ "architecture": "BN -> Dense64 ReLU (encoded) -> [Dense512 ReLU -> Dense n_genes linear] + [Dense2 softmax]",
+ "loss": "0.001*MSE + 0.5*cosine_similarity",
+ "optimizer": "Adam(0.001)",
+ "seconds": 26.6
+}
