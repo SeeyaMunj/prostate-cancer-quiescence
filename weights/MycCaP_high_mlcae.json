@@ -1,0 +1,17 @@
+{
+ "dataset": "MycCaP_high",
+ "n_genes": 9758,
+ "n_cells": 20140,
+ "n_G0": 12450,
+ "train_cells": 14098,
+ "test_cells": 6042,
+ "test_auc": 0.9885,
+ "epochs": 10,
+ "batch_size": 256,
+ "seed": 4,
+ "split": "70/30 stratified",
+ "architecture": "BN -> Dense64 ReLU (encoded) -> [Dense512 ReLU -> Dense n_genes linear] + [Dense2 softmax]",
+ "loss": "0.001*MSE + 0.5*cosine_similarity",
+ "optimizer": "Adam(0.001)",
+ "seconds": 36.8
+}
